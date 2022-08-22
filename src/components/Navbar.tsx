@@ -1,6 +1,7 @@
 import React, { useEffect, MouseEvent, useContext } from 'react';
 import styled from '@emotion/styled';
 import { theme } from '../commons/theme';
+import axios from 'axios';
 const NavbarWrapper = styled.nav`
     width: 100%;
     padding-top: 20px;
@@ -53,10 +54,10 @@ export default function Navbar({ setBoards }: { setBoards: React.Dispatch<React.
     //     setBoards(data);
     // };
 
-    // const getBestBoards = async () => {
-    //     const { data } = await axios.get(`http://localhost:3001/posts?viewCount_gte=100`);
-    //     setBoards(data);
-    // };
+    const getBestBoards = async () => {
+        const { data } = await axios.get(`http://localhost:3001/posts?viewCount_gte=100`);
+        // setBoards(data);
+    };
 
     // const checkCategory = (categoryNumber: number) => {
     //     if (categoryNumber === 0) {
